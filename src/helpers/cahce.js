@@ -22,6 +22,7 @@ class Cache {
     }
 
     set = (name, val) => {
+        this.queue.push(name);
         this.manageSize();
         this[name] = val;
     }

@@ -5,7 +5,7 @@ import {SearchFilmApp} from "../components/SearchFilmApp"
  * when there're more films found than displayed, allows to show 'load more'
  */
 const mapStateToProps = ({ films: {films, total, isProcessing} }) => ({
-    allowLoadMore: !isProcessing && (total > films.length)
+    allowLoadMore: !isProcessing && !!films.length && (total > films.length)
 });
 
 export default connect(mapStateToProps)(SearchFilmApp);
